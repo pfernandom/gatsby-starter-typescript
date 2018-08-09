@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration | Button renders correctly (snapshot) 1`] = `
+<button
+  className="btn foo"
+>
+  Bar
+</button>
+`;

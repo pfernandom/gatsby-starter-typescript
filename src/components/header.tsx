@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Button from './Button'
 
 const Header = ({ siteTitle }) => (
   <div
@@ -25,6 +26,7 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
+        <Button onClick={(ev) => { console.log('Hello', ev); }}>This is a button</Button>
       </h1>
     </div>
   </div>

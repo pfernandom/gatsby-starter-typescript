@@ -1,11 +1,19 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import Button from '../../src/components/Button';
 
 describe('Integration | Button', () => {
+  it('renders correctly (snapshot)', () => {
+    const rendered = renderer.create(
+      <Button className="foo">Bar</Button>,
+    );
+    expect(rendered.toJSON()).toMatchSnapshot();
+  });
+
   it('should render without throwing an error', () => {
-    expect(shallow(<Button className="foo">Bar</Button>).contains(<button className="foo">Bar</button>)).toBe(true);
+    expect(shallow(<Button className="foo">Bar</Button>).contains(<button className="btn foo">Bar</button>)).toBe(true);
   });
   /*
   it('should be selectable by class "foo"', function() {

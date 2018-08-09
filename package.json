@@ -22,6 +22,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "lint": "tslint --project .",
+    "precommit": "npm run lint && npm test",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -37,7 +38,10 @@
     "enzyme-adapter-react-15": "^1.0.6",
     "enzyme-to-json": "^3.3.4",
     "gatsby-plugin-typescript": "^1.4.20",
+    "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.4.2",
+    "jest-css-modules": "^1.1.0",
     "prettier": "^1.13.7",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-test-renderer": "^15.6.2",
@@ -46,41 +50,8 @@
     "ts-lint": "^4.5.1",
     "ts-loader": "^3.3.1",
     "tslint-config-prettier": "^1.14.0",
-    "typescript": "^3.0.1"
-  },
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost/",
-    "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setup/setupEnzyme.ts",
-    "testPathIgnorePatterns": [
-      "<rootDir>/__tests__/setup/",
-      "/node_modules/",
-      "<rootDir>/.cache/"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "transform": {
-      "^.+\\.(jsx?|tsx?)$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.(jsx?|tsx?)"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "text",
-      "html"
-    ]
+    "typescript": "^3.0.1",
+    "typings-for-css-modules-loader": "^1.7.0"
   },
   "repository": {
     "type": "git",
